@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name sunrin.junoim.kr;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/root/vhosts/sunrin-commute/sunrin-commute.sock;
+    }
+}
