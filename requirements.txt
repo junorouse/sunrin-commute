@@ -9,6 +9,7 @@ gevent==1.2.1
 gevent-socketio==0.3.6
 gevent-websocket==0.10.1
 greenlet==0.4.12
+gunicorn==19.7.1
 humanfriendly==2.4
 ipdb==0.10.3
 ipython==6.0.0
