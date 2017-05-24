@@ -1,3 +1,3 @@
-from parser import bus_arrival
+from parser import transport_arrival
 
-print(bus_arrival)
+print(transport_arrival)
