@@ -5,3 +5,16 @@ It was created not to late for school.
 
 [Go](https://sunrin.junoim.kr/)
 
+### Screenshot
+
+img
+
+# install
+
+```sh
+cp sunrin-commute.conf /etc/init/sunrin-commute.conf
+start sunrin-commute
+cp sunrin-commute.nginx /etc/nginx/sites-available/sunrin-commute
+ln -s /etc/nginx/sites-available/sunrin-commute /etc/nginx/sites-enabled/
+service nginx restart
+```
