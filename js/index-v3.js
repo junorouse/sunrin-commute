@@ -9,12 +9,15 @@ var main = new Vue({
 	{
 		getTransportArrivalList: function()
 		{
+			var reloadBtn = document.getElementById("reload_btn");
+			reloadBtn.innerText = "새로고침 중 ... ";
 			var resource = this.$resource(this.apiUrl)
 			resource.get().then(
 				(response) => 
 				{
 					this.transportArrivalList = response.data
-				})
+					reloadBtn.innerText = "새로고침";
+				});
 		},
 	},
 	data:
@@ -23,3 +26,4 @@ var main = new Vue({
 		transportArrivalList: [],
 	},
 });
+
