@@ -7,7 +7,7 @@ It was created not to late for school.
 
 ### Screenshot
 
-img
+![](http://i.imgur.com/CZC2rNV.jpg)
 
 # install
 
