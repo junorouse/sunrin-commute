@@ -48,13 +48,16 @@ def get_transport_arrival():
             continue
 
     metro_data = get(metro_url).content.decode('utf-8')
-
-    first_metro = metro_data.split('<div class="arvl1"><font color="red" size="2" style="font-weight:bold">이번열차 : ')[1].split('</font>')[0]
     try:
-        second_metro = metro_data.split('<p>다음열차 : ')[1].split('<br/>')[0]
-        is_second_metro = True
+        first_metro = metro_data.split('<div class="arvl1"><font color="red" size="2" style="font-weight:bold">이번열차 : ')[1].split('</font>')[0]
+        try:
+            second_metro = metro_data.split('<p>다음열차 : ')[1].split('<br/>')[0]
+            is_second_metro = True
+        except IndexError:
+            is_second_metro = False
     except IndexError:
-        is_second_metro = False
+        transport_arrival = sorted(transport_arrival, key=itemgetter('remain_minute'))
+        return transport_arrival
 
     first_remain_stop = ''
 
@@ -91,3 +94,4 @@ def get_transport_arrival():
     transport_arrival = sorted(transport_arrival, key=itemgetter('remain_minute'))
 
     return transport_arrival
+	

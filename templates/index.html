@@ -15,6 +15,11 @@
 <div class="container" id="app" style="margin: 0; padding: 0;">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
+						<template v-if="transportArrivalList.length == 0">
+							<div style="padding: 10px; margin: 0;">
+								<h1>다음차가 없어요 ㅜ..</h1>
+							</div>
+						</template>
             <template v-for="t in transportArrivalList">
                 <div class="media" style="padding: 10px; margin: 0; border-bottom: 1px solid black;" v-bind:style="{ background: t.color }" v-if="t.remain_minute >= 0">
                     <div class="media-left">
